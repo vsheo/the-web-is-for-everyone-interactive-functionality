@@ -46,12 +46,14 @@ app.post('/:id', async function (request, response) {
   // url waar het cadeau opgeslagen moet worden
   const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/'
 
-  // url om te kijken als het cadeau al opgeslagen is
+  // filter om te zoeken naar het cadeau,
   const GiftFilter = `?filter={"milledoni_users_id":"${loggedInUserID}","milledoni_products_id":"${getId}"}`;
   const checkGift = await fetch(postURL + GiftFilter)
   const checkGiftResponseJSON = await checkGift.json()
 
+  // if statement om te kijken als het cadeau al in de lijst staat
   if (checkGiftResponseJSON.data.length > 0) {
+    // als dat het geval is dan hebben we de id nodig om het met delete uit de lijst te haalen
     let delResponse = await fetch(postURL + checkGiftResponseJSON.data[0].id, {
       method: 'DELETE',
       headers: {
