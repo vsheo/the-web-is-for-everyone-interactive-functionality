@@ -5,7 +5,7 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
-const loggedInUserID = 2 // Ravi in dit geval
+const loggedInUserID = 2 // viresh in dit geval
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
@@ -40,24 +40,50 @@ app.get('/', async function (request, response) {
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 app.post('/:id', async function (request, response) {
  
-  // Haal de data het cadeau op die in de bookmark list moet
+  // Haal de data het cadeau id op die in de bookmark list moet komen
   const getId = request.params.id;
 
+  // url waar het cadeau opgeslagen moet worden
+  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/'
+
+  // url om te kijken als het cadeau al opgeslagen is
+  const GiftFilter = `?filter={"milledoni_users_id":"${loggedInUserID}","milledoni_products_id":"${getId}"}`;
+  const checkGift = await fetch(postURL + GiftFilter)
+  const checkGiftResponseJSON = await checkGift.json()
+
+  if (checkGiftResponseJSON.data.length > 0) {
+    await fetch(postURL, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        milledoni_users_id: loggedInUserID,
+        milledoni_products_id: getId
+      }),
+    })
+    console.log('Product verwijderd')
+  }
   // Voeg de nieuwe waarde toe aan de bookmark list in directus
-  const patchResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      milledoni_users_id: loggedInUserID,
-      milledoni_products_id: getId
-    }),
-  })
+  else {
+    await fetch(postURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        milledoni_users_id: loggedInUserID,
+        milledoni_products_id: getId
+      }),
+    })
+    console.log('Product opgeslagen')
+  }
 
   // Redirect terug naar de index pagina
   response.redirect('/')
 })
+
+
 
 // details pagina
 app.get('/details/:slug', async function (request, response) {
