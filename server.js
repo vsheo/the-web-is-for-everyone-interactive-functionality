@@ -57,10 +57,6 @@ app.post('/:id', async function (request, response) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        milledoni_users_id: loggedInUserID,
-        milledoni_products_id: getId
-      }),
     })
     console.log('Product verwijderd')
     console.log(delResponse.status);
@@ -80,7 +76,7 @@ app.post('/:id', async function (request, response) {
     console.log('Product opgeslagen')
   }
 
-  
+
   // Redirect terug naar de index pagina
   response.redirect('/')
 })
