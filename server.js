@@ -5,6 +5,8 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
+const loggedInUserID = 2 // Ravi in dit geval
+
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
@@ -24,7 +26,52 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 
-console.log('Let op: Er zijn nog geen routes. Voeg hier dus eerst jouw GET en POST routes toe.')
+// Maak een GET route voor de index
+app.get('/', async function (request, response) {
+  // Render index.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags')
+  const giftResponseJSON = await giftResponse.json()
+
+  response.render('index.liquid', {giftData: giftResponseJSON.data})
+})
+
+
+// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
+app.post('/:id', async function (request, response) {
+ 
+  // Haal de data het cadeau op die in de bookmark list moet
+  const getId = request.params.id;
+
+  // Voeg de nieuwe waarde toe aan de bookmark list in directus
+  const patchResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      milledoni_users_id: loggedInUserID,
+      milledoni_products_id: getId
+    }),
+  })
+
+  // Redirect terug naar de index pagina
+  response.redirect('/')
+})
+
+// details pagina
+app.get('/details/:slug', async function (request, response) {
+  // haal de slug op uit de url
+  const slug = request.params.slug;
+  // voeg de slug toe als filter
+  const giftURL = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=slug,name,image,description,url&filter={"slug":"${slug}"}`
+  
+  // fetch de nieuwe filter
+  const giftResponse = await fetch(giftURL)
+  const giftResponseJSON = await giftResponse.json()
+
+  response.render('details.liquid', {giftData: giftResponseJSON.data[0]})
+})
 
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
