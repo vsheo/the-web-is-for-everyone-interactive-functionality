@@ -52,7 +52,7 @@ app.post('/:id', async function (request, response) {
   const checkGiftResponseJSON = await checkGift.json()
 
   if (checkGiftResponseJSON.data.length > 0) {
-    await fetch(postURL, {
+    let delResponse = await fetch(postURL + checkGiftResponseJSON.data[0].id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -63,6 +63,7 @@ app.post('/:id', async function (request, response) {
       }),
     })
     console.log('Product verwijderd')
+    console.log(delResponse.status);
   }
   // Voeg de nieuwe waarde toe aan de bookmark list in directus
   else {
@@ -79,6 +80,7 @@ app.post('/:id', async function (request, response) {
     console.log('Product opgeslagen')
   }
 
+  
   // Redirect terug naar de index pagina
   response.redirect('/')
 })
@@ -93,10 +95,13 @@ app.get('/details/:slug', async function (request, response) {
   const giftURL = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=slug,name,image,description,url&filter={"slug":"${slug}"}`
   
   // fetch de nieuwe filter
-  const giftResponse = await fetch(giftURL)
-  const giftResponseJSON = await giftResponse.json()
+  const clickedgiftResponse = await fetch(giftURL)
+  const clickedgiftResponseJSON = await clickedgiftResponse.json()
 
-  response.render('details.liquid', {giftData: giftResponseJSON.data[0]})
+  const allGifts = await fetch("https://fdnd-agency.directus.app/items/milledoni_products/?fields=slug,name,image,description,url")
+  const allGiftsResponseJSON = await allGifts.json()
+
+  response.render('details.liquid', {clickedGiftData: clickedgiftResponseJSON.data[0], allGifts: allGiftsResponseJSON.data})
 })
 
 /*
