@@ -37,7 +37,7 @@ app.get('/', async function (request, response) {
 })
 
 
-// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
+// Maak een POST route voor de index; hiermee kun je een item toevoegen of uit de bookmarklijst halen
 app.post('/:id', async function (request, response) {
  
   // Haal de data het cadeau id op die in de bookmark list moet komen
@@ -90,16 +90,64 @@ app.get('/details/:slug', async function (request, response) {
   // haal de slug op uit de url
   const slug = request.params.slug;
   // voeg de slug toe als filter
-  const giftURL = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=slug,name,image,description,url&filter={"slug":"${slug}"}`
+  const giftURL = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,description,url&filter={"slug":"${slug}"}`
   
   // fetch de nieuwe filter
   const clickedgiftResponse = await fetch(giftURL)
   const clickedgiftResponseJSON = await clickedgiftResponse.json()
 
-  const allGifts = await fetch("https://fdnd-agency.directus.app/items/milledoni_products/?fields=slug,name,image,description,url")
+  const allGifts = await fetch("https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,description,url")
   const allGiftsResponseJSON = await allGifts.json()
 
   response.render('details.liquid', {clickedGiftData: clickedgiftResponseJSON.data[0], allGifts: allGiftsResponseJSON.data})
+})
+
+// Maak een POST route voor de details; hiermee kun je een item toevoegen of uit de bookmarklijst halen
+app.post('/details/:slug/:id', async function (request, response) {
+ 
+  // Haal de data het cadeau id op die in de bookmark list moet komen
+  const getId = request.params.id;
+
+  // haal de slug op, om later te redirecten naar dezelfde details pagina
+  const getSlug = request.params.slug;
+
+  // url waar het cadeau opgeslagen moet worden
+  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/'
+
+  // filter om te zoeken naar het cadeau,
+  const GiftFilter = `?filter={"milledoni_users_id":"${loggedInUserID}","milledoni_products_id":"${getId}"}`;
+  const checkGift = await fetch(postURL + GiftFilter)
+  const checkGiftResponseJSON = await checkGift.json()
+
+  // if statement om te kijken als het cadeau al in de lijst staat
+  if (checkGiftResponseJSON.data.length > 0) {
+    // als dat het geval is dan hebben we de id nodig om het met delete uit de lijst te haalen
+    let delResponse = await fetch(postURL + checkGiftResponseJSON.data[0].id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    console.log('Product verwijderd')
+    console.log(delResponse.status);
+  }
+  // Voeg de nieuwe waarde toe aan de bookmark list in directus
+  else {
+    await fetch(postURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        milledoni_users_id: loggedInUserID,
+        milledoni_products_id: getId
+      }),
+    })
+    console.log('Product opgeslagen')
+  }
+
+  // Redirect terug naar dezelfde details pagina
+  response.redirect(`/details/${getSlug}`)
 })
 
 /*
