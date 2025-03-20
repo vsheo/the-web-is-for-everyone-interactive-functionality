@@ -44,8 +44,9 @@ header {
         font-size: var(--fs-s);
 
         @media (min-width: 700px) {
-            width: 5.5em;
+            width: 6.5em;
             height: 2em;
+            text-wrap: nowrap;
         }
 
         .text-desktop {
