@@ -102,6 +102,7 @@ app.get('/details/:slug', async function (request, response) {
   response.render('details.liquid', {clickedGiftData: clickedgiftResponseJSON.data[0], allGifts: allGiftsResponseJSON.data})
 })
 
+
 // Maak een POST route voor de details; hiermee kun je een item toevoegen of uit de bookmarklijst halen
 app.post('/details/:slug/:id', async function (request, response) {
  
@@ -149,6 +150,18 @@ app.post('/details/:slug/:id', async function (request, response) {
   // Redirect terug naar dezelfde details pagina
   response.redirect(`/details/${getSlug}`)
 })
+
+
+// bookmark overzicht pagina
+app.get('/bookmark-overzicht', async function (request, response) {
+  const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags')
+  const giftResponseJSON = await giftResponse.json()
+
+  response.render('bk-overzicht.liquid', {giftData: giftResponseJSON.data})
+})
+
+
+
 
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
