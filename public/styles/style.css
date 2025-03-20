@@ -415,6 +415,61 @@ header {
     }
 }
 
+.bk-overzicht-main {
+    .bookmarks-container {
+        .bookmark-list {
+            border: 1px solid black;
+            display: grid;
+            grid-template-rows: min-content min-content;
+            grid-template-columns: min-content min-content min-content;
+            grid-template-areas:
+            "picture name days"
+            "picture ideas find"
+            ;
+            width: min-content;
+            border-radius: 20px;
+
+            h3 {
+                grid-area: name;
+                align-self: end;
+            }
+
+            img {
+                grid-area: picture;
+            }
+
+            .birthday {
+                grid-area: days;
+                text-wrap: nowrap;
+                justify-self: end;
+                align-self: end;
+                margin: 0 0.5em 0 0;
+            }
+
+            .total-ideas {
+                grid-area: ideas;
+                text-wrap: nowrap;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0.5em 0 0.5em;
+            }
+
+            .find-new-ideas {
+                grid-area: find;
+                text-wrap: nowrap;
+                border: 1px solid black;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.3em;
+                margin: 0.5em 0.5em 0.5em 0;
+            }
+        }
+    }
+}
+
 
 
 /* uit partials */
@@ -447,13 +502,18 @@ header {
         margin-top: 0.5em;
     }
 
-    .bookmark-add {
+    form {
         grid-area: img;
+        width: min-content;
+
         justify-self:end;
         align-self:start;
-        margin: 1em;
-        width: 75px;
-        height: 75px;
+
+        .bookmark-add {
+            margin: 1em;
+            width: 75px;
+            height: 75px;
+        }
     }
 
     .gift-title {
