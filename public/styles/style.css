@@ -428,6 +428,7 @@ header {
             ;
             width: min-content;
             border-radius: 20px;
+            margin: 0 0 2em 2em;
 
             h3 {
                 grid-area: name;

@@ -154,10 +154,14 @@ app.post('/details/:slug/:id', async function (request, response) {
 
 // bookmark overzicht pagina
 app.get('/bookmark-overzicht', async function (request, response) {
-  const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags')
-  const giftResponseJSON = await giftResponse.json()
+  // alle bookmark lijsten
+  // https://fdnd-agency.directus.app/items/milledoni_users?fields=*.*
 
-  response.render('bk-overzicht.liquid', {giftData: giftResponseJSON.data})
+  const listsURLResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.*')
+  const listsURLResponseJSON = await listsURLResponse.json()
+
+
+  response.render('bk-overzicht.liquid', {bookmarkLists: listsURLResponseJSON.data})
 })
 
 
