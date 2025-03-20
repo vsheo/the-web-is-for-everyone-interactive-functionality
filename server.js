@@ -165,7 +165,15 @@ app.get('/bookmark-overzicht', async function (request, response) {
 })
 
 
+// bookedmarked lijst pagina
+app.get('/bookmark-list/:name', async function (request, response) {
 
+  const listsURLResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.*')
+  const listsURLResponseJSON = await listsURLResponse.json()
+
+
+  response.render('bk-lijst.liquid', {bookmarkLists: listsURLResponseJSON.data})
+})
 
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
