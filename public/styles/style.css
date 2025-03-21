@@ -473,6 +473,17 @@ header {
 }
 
 .bk-lijst-main {
+    .loading-circle {
+        color: rgb(92, 252, 0);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hidden {
+        display: none;
+    }
 }
 
 
