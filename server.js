@@ -157,7 +157,7 @@ app.get('/bookmark-overzicht', async function (request, response) {
   // alle bookmark lijsten
   // https://fdnd-agency.directus.app/items/milledoni_users?fields=*.*
 
-  const listsURLResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.*')
+  const listsURLResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users/')
   const listsURLResponseJSON = await listsURLResponse.json()
 
 
@@ -167,12 +167,31 @@ app.get('/bookmark-overzicht', async function (request, response) {
 
 // bookedmarked lijst pagina
 app.get('/bookmark-list/:name', async function (request, response) {
+  const getName = request.params.name;
 
-  const listsURLResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.*')
-  const listsURLResponseJSON = await listsURLResponse.json()
+  // haal jou list op
+  const yourList = `https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.milledoni_products_id&filter={"name":{"_icontains":"${getName}"}}`
+  const yourListResponse = await fetch(yourList)
+  const yourListResponseJSON = await yourListResponse.json()
 
+  const productIdArray = []
 
-  response.render('bk-lijst.liquid', {bookmarkLists: listsURLResponseJSON.data})
+  // sla elke product id op in een array
+  yourListResponseJSON.data.forEach(list => {
+    list.saved_products.forEach(product => {
+      productIdArray.push(product.milledoni_products_id)
+    })
+  })
+
+  // gebruik de array om een URL te maken die de data ophaalt
+  // filter={"id": {"_in": [1269, 895, 789]}}
+  const bookmarkedGFift = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,image,name,slug&filter={"id":{"_in":"${productIdArray}"}}`
+  console.log(productIdArray)
+
+  const myListResponse = await fetch(bookmarkedGFift)
+  const myListResponseJSON = await myListResponse.json()
+
+  response.render('bk-lijst.liquid', {myList: myListResponseJSON.data})
 })
 
 /*
