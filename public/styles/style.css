@@ -90,6 +90,48 @@ header {
     }
 }
 
+.loading-overlay {
+
+    .hidden {
+        display: none;
+    }
+
+    /* https://www.w3schools.com/howto/howto_css_loader.asp */
+    .loading-circle {
+        position: fixed;
+        top: 42%;
+        left: 45.5%;
+        transform: translate(-50%, -50%);
+        z-index: 201;
+
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid var(--background-dark);
+        border-radius: 50%;
+        width: 8em;
+        height: 8em;
+        animation: loader 2s linear infinite;
+    }
+
+    /* tekst in de loading circle */
+    .loading-text {
+        color: var(--text-highlight);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: large;
+        font-weight: 600;
+        z-index: 202;
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 200;
+    }
+}
+
 .index-main {
     @media (min-width: 1100px) {
         display: grid;
@@ -472,27 +514,7 @@ header {
     }
 }
 
-.bk-lijst-main {
-    .loading-circle {
-        color: rgb(92, 252, 0);
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 201;
-    }
 
-    .hidden {
-        display: none;
-    }
-
-    .overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 200;
-    }
-}
 
 
 
@@ -567,5 +589,15 @@ header {
 
     span {
         text-wrap: nowrap;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
