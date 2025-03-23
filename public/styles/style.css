@@ -92,10 +92,6 @@ header {
 
 .loading-overlay {
 
-    .hidden {
-        display: none;
-    }
-
     /* https://www.w3schools.com/howto/howto_css_loader.asp */
     .loading-circle {
         position: fixed;
@@ -130,6 +126,10 @@ header {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 200;
     }
+}
+
+.hidden {
+    display: none;
 }
 
 .index-main {
