@@ -194,6 +194,11 @@ app.get('/bookmark-list/:name', async function (request, response) {
   response.render('bk-lijst.liquid', {myList: myListResponseJSON.data})
 })
 
+// als de link niet betstaat dan wordt de gebruiker naar een 404 error pagina gebracht
+app.use(function (request, response) {
+  response.status(404).render('404.liquid')
+})
+
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
 app.get(…, async function (request, response) {

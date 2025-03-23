@@ -514,7 +514,23 @@ header {
     }
 }
 
+.error-404-message {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    
+    .error-text {
+        font-size: larger;
+    }
 
+    .link-home {
+        color: blue;
+    }
+}
 
 
 
