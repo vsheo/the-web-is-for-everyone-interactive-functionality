@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// window.addEventListener("popstate", () => {
-//     loading.classList.add("hidden");
-// });
-
-// window.addEventListener('load', () => {
-//     loading.classList.add("hidden");
-// });
+// De loading circle blijft op scherm beeld als de back button geklikt wordt
+// reset wanneer de website ingeladen wordt
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event
+// https://stackoverflow.com/questions/15640087/javascript-unchecking-all-checkboxes
+window.addEventListener("pageshow", () => {
+    loading.classList.add("hidden");
+});
 
 
 // back button
