@@ -1,5 +1,4 @@
 // loading bar als een link geklikt wordt
-
 const page = document.querySelector("main");
 const anchorTags = document.querySelectorAll("a");
 const loading = document.querySelector(".loading-circle");
@@ -15,4 +14,14 @@ anchorTags.forEach((link) => {
         overlay.classList.remove("hidden");
         loadingTekst.classList.remove("hidden");
     });
+});
+
+
+// back button
+// deze button brengt de gebruiker naar de vorige pagina
+
+const backButton = document.querySelector(".button-back");
+backButton.addEventListener("click", () => {
+    // als de button geklikt wordt ga naar de vorige pagina
+    window.history.back();
 });
