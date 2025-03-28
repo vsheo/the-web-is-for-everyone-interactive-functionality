@@ -133,7 +133,7 @@ header {
 }
 
 .index-main {
-    @media (min-width: 1100px) {
+    /* @media (min-width: 1100px) {
         display: grid;
         grid-template-rows: min-content min-content min-content;
         grid-template-columns: min-content 1fr;
@@ -142,9 +142,18 @@ header {
             "filters gifts"
             "search gifts"
         ;
+    } */
+
+    @media (min-width: 1100px) {
+        display: flex;
+        flex-direction: row;
     }
 
-    /* .filter-area { */
+    .filter-area {
+        @media (min-width: 1100px) {
+            width: 50dvw;
+        }
+
         h2 {
             max-width: 12ch;
             margin: 2em 0.5em 0 0.5em;
@@ -251,13 +260,11 @@ header {
                 }
             }
         }
-    /* } */
+    }
 
     .container-gift {
         background-color: var(--background-secondary);
         border-radius: 20px;
-        /* display: flex;
-        flex-direction: column; */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
         gap: 1em;
@@ -266,6 +273,10 @@ header {
 
         @media (min-width: 350px) {
             place-items: center;
+        }
+
+        @media (min-width: 1100px) {
+            width: 100dvw;
         }
 
         grid-area: gifts;
@@ -547,8 +558,9 @@ header {
     ;            
 
     background-color: white;
-    width: clamp(18em, 50vw, 17em);
-    margin: 1em 0 1em 0;
+    max-width: clamp(18em, 50vw, 17em);
+    margin: 1em 1em 1em 1em;
+    justify-self: center;
 
     /* de elementen in de article blijven binnen de grid */
     &> * {
@@ -591,7 +603,7 @@ header {
     "img saved svg given"
     ;
     align-items: center;
-    max-width: 100%;
+    width: 18em;
     overflow: hidden;
 
     img {
