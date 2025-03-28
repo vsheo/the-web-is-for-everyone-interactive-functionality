@@ -48,6 +48,7 @@ body {
     color: var(--text-primary);
     background-color: var(--background-primary);
 
+    --height-header: 9.5em;
 }
 
 
