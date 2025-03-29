@@ -335,7 +335,7 @@ header {
     }
 }
 
-.index-details {
+.details-main {
     display: flex;
     flex-direction: column;
 
