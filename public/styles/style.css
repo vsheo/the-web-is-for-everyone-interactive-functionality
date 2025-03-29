@@ -337,7 +337,7 @@ header {
             gap: 1em;
             margin: 1em 0;
             background-color: #FFFFFF;
-            max-width: max-content;
+            /* max-width: max-content; */
             padding: 1em;
             border-radius: 20px;
 
@@ -348,7 +348,7 @@ header {
             }           
 
             span {
-                max-width: 12ch;
+                /* max-width: 12ch; */
 
                 &:nth-of-type(1) {
                     grid-area: surprised-text;
@@ -392,46 +392,55 @@ header {
     }
 
     .where-to-buy {
-        margin-bottom: 3em;
-
         h3{
             margin-top: 1em;
         }
 
-        .buy-option {
-            border: 1px solid black;
+        .container-buy-option {
             display: grid;
-            grid-template-columns: 1fr;
-            grid-template-areas:
-            "img"
-            "title"
-            "store"
-            ;
-            width: 15.5em;
-            margin-bottom: 1em;
+            grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+            gap: 1em;
+            justify-items: center;
 
-            h3 {
-                grid-area: title;
-            }
+            .buy-option {
+                border: 1px solid black;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "img"
+                "title"
+                "store"
+                ;
+                width: 15.5em;
+                margin-bottom: 1em;
 
-            .svg-cart {
-                grid-area: img;
-                place-self: center;
-            }
+                h3 {
+                    grid-area: title;
+                }
 
-            img {
-                grid-area: img;
-            }
+                .svg-cart {
+                    grid-area: img;
+                    place-self: center;
+                }
 
-            span {
-                grid-area: store;
-                margin-top: 0.5em;
+                img {
+                    grid-area: img;
+                }
+
+                span {
+                    grid-area: store;
+                    margin-top: 0.5em;
+                }
             }
         }
     }
 
     .article-gift {
         margin-right: 1em;
+    }
+
+    .container-gift {
+        margin-top: 0;
     }
 }
 
