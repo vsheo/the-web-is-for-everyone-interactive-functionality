@@ -279,22 +279,31 @@ header {
 .details-main {
     display: flex;
     flex-direction: column;
+    background-color: var(--background-secondary);
+    margin: 0 0.5em;   
 
     .button-back {
         margin: 2em 0 0 0.5em;
     }
 
-    .img-carousel {
-        max-width: 30em;
-        margin: 0.5em;
-    }
+    .main-info-gift {
+        background-color: #FFFFFF;
 
-    .side-column {
-        background-color: var(--background-secondary);
-        margin: 0 0.5em;   
+        .img-carousel {
+            width: 100%;
+            height: auto;
+            max-width: 20em;
+            margin: 0.5em 0.5em 0.5em 1em;
+        }
 
         h2 {
             font-size: clamp(1.6rem, 5vw, 2.5rem);
+            margin-left: 0.5em;
+        }
+
+        .description {
+            width: clamp(20ch, 90%, 60ch);
+            margin: 1.5em 1em;
         }
 
         .add-to-bookmark {
@@ -307,30 +316,16 @@ header {
             padding: 0.5em;
             border-radius: 25px;
             font-size: var(--fs-primary);
-            margin-bottom: 1em;
+            margin: 0 1em 1em 0;
 
             svg {
                 fill: var(--text-highlight);
                 margin: 0 0.5em;
             }
         }
+    }
 
-        .description {
-            width: clamp(29ch, 90%, 60ch);
-            margin: 1.5em 0;
-        }
-
-        .gift-details {
-            display: grid;
-            grid-template-columns: min-content 1fr;
-            gap: 1em;
-            width: clamp(29ch, 80%, 60ch);
-            align-items: center;
-            border-top: 2px solid var(--background-grey);
-            border-bottom: 2px solid var(--background-grey);
-            padding: 1em 0;
-        }
-
+    .form-details {
         .hoe-tevreden {
             display: grid;
             grid-template-columns: min-content min-content min-content 1fr;
@@ -341,6 +336,10 @@ header {
             ;
             gap: 1em;
             margin: 1em 0;
+            background-color: #FFFFFF;
+            max-width: max-content;
+            padding: 1em;
+            border-radius: 20px;
 
             align-items: center;
 
@@ -349,6 +348,8 @@ header {
             }           
 
             span {
+                max-width: 12ch;
+
                 &:nth-of-type(1) {
                     grid-area: surprised-text;
                 }
@@ -363,50 +364,74 @@ header {
             }
         }
 
-        .where-to-buy {
-            border-top: 2px solid var(--background-grey);
-            border-bottom: 2px solid var(--background-grey);
-            margin-bottom: 3em;
+        .gift-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em 0;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            max-width: 40em;
 
-            h3{
-                margin-top: 1em;
+            svg {
+                margin: 0 1em 0 1em;
+                justify-self: center;
             }
 
-            .buy-option {
-                border: 1px solid black;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                "img"
-                "title"
-                "store"
-                ;
-                width: 15.5em;
-                margin-bottom: 1em;
-
-                h3 {
-                    grid-area: title;
-                }
-
-                .svg-cart {
-                    grid-area: img;
-                    place-self: center;
-                }
-
-                img {
-                    grid-area: img;
-                }
+            p {
+                width: clamp(29ch, 80%, 60ch);
+                margin-top: 0.5em;
+                padding: 0 1em 0 1em;
 
                 span {
-                    grid-area: store;
-                    margin-top: 0.5em;
+                    display: block;
+                    text-align: center;
                 }
             }
         }
+    }
 
-        .article-gift {
-            margin-right: 1em;
+    .where-to-buy {
+        margin-bottom: 3em;
+
+        h3{
+            margin-top: 1em;
         }
+
+        .buy-option {
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            "img"
+            "title"
+            "store"
+            ;
+            width: 15.5em;
+            margin-bottom: 1em;
+
+            h3 {
+                grid-area: title;
+            }
+
+            .svg-cart {
+                grid-area: img;
+                place-self: center;
+            }
+
+            img {
+                grid-area: img;
+            }
+
+            span {
+                grid-area: store;
+                margin-top: 0.5em;
+            }
+        }
+    }
+
+    .article-gift {
+        margin-right: 1em;
     }
 }
 
