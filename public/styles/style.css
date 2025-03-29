@@ -255,6 +255,24 @@ header {
                 max-width: 25ch;
             }
         }
+
+        /* media queeries voor de gift container van de index pagina */
+        & + .container-gift {
+            @media (min-width: 350px) {
+                place-items: center;
+            }
+        
+            @media (min-width: 1100px) {
+                width: 65dvw;
+                /* scrollen in de gifts container */
+                /* 100% - header height */
+                height: calc(100dvh - var(--height-header));
+                padding: 0 1em 0 1em;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+            }
+        }
+
     }
 }
 
@@ -479,20 +497,6 @@ header {
     gap: 1em;
     align-items: center;
     margin-top: 3em;
-
-    @media (min-width: 350px) {
-        place-items: center;
-    }
-
-    @media (min-width: 1100px) {
-        width: 65dvw;
-        /* scrollen in de gifts container */
-        /* 100% - header height */
-        height: calc(100dvh - var(--height-header));
-        padding: 0 1em 0 1em;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-    }
 
     .article-login {
         display:grid;
