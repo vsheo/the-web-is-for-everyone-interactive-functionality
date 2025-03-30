@@ -371,7 +371,7 @@ header {
             padding: 1em 0;
             background-color: #FFFFFF;
             border-radius: 20px;
-            max-width: 40em;
+            /* max-width: 40em; */
 
             svg {
                 margin: 0 1em 0 1em;
