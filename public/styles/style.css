@@ -289,43 +289,84 @@ header {
     .main-info-gift {
         background-color: #FFFFFF;
 
+        @media (min-width: 820px) {
+            display: grid;
+            grid-template-columns: auto auto max-content;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "image title button-add"
+                "image info button-marks"
+            ;
+        }
+
         .img-carousel {
+            grid-area: image;
             width: 100%;
             height: auto;
             max-width: 20em;
             margin: 0.5em 0.5em 0.5em 1em;
+
+            @media (min-width: 820px) {
+                grid-area: image;
+            }
         }
 
         h2 {
             font-size: clamp(1.6rem, 5vw, 2.5rem);
             margin-left: 0.5em;
+
+            @media (min-width: 820px) {
+                grid-area: title;
+                align-self: end;
+            }
         }
 
         .description {
             width: clamp(20ch, 90%, 60ch);
             margin: 1.5em 1em;
+
+            @media (min-width: 820px) {
+                grid-area: info;
+                margin-top: 0;
+            }
         }
 
-        .add-to-bookmark {
-            display: flex;
-            align-items: center;
-            justify-self: end;
-            background-color: var(--background-dark);
-            color: var(--text-highlight);
-            border: none;
-            padding: 0.5em;
-            border-radius: 25px;
-            font-size: var(--fs-primary);
-            margin: 0 1em 1em 0;
+        form {
+            @media (min-width: 820px) {
+                grid-area: button-add;
+                align-self: end;
+            }
 
-            svg {
-                fill: var(--text-highlight);
-                margin: 0 0.5em;
+            .add-to-bookmark {
+                display: flex;
+                align-items: center;
+                justify-self: end;
+                background-color: var(--background-dark);
+                color: var(--text-highlight);
+                border: none;
+                padding: 0.5em;
+                border-radius: 25px;
+                font-size: var(--fs-primary);
+                margin: 0 1em 1em 0;
+
+                @media (min-width: 820px) {
+                    margin: 0;
+                }
+
+                svg {
+                    fill: var(--text-highlight);
+                    margin: 0 0.5em;
+                }
             }
         }
     }
 
     .form-details {
+        @media (min-width: 820px) {
+            display: flex;
+            flex-direction: row;
+        }
+
         .hoe-tevreden {
             display: grid;
             grid-template-columns: min-content min-content min-content 1fr;
@@ -372,6 +413,11 @@ header {
             background-color: #FFFFFF;
             border-radius: 20px;
             /* max-width: 40em; */
+
+            @media (min-width: 820px) {
+                flex-direction: row;
+                margin: 1em;
+            }
 
             svg {
                 margin: 0 1em 0 1em;
