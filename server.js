@@ -198,7 +198,7 @@ app.get('/bookmark-list/:name', async function (request, response) {
   const myListResponse = await fetch(bookmarkedGFift)
   const myListResponseJSON = await myListResponse.json()
 
-  response.render('bk-lijst.liquid', {myList: myListResponseJSON.data})
+  response.render('bk-lijst.liquid', {myList: myListResponseJSON.data, bookmarks: productIdArray})
 })
 
 // als de link niet betstaat dan wordt de gebruiker naar een 404 error pagina gebracht
