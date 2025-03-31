@@ -33,7 +33,15 @@ app.get('/', async function (request, response) {
   const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags')
   const giftResponseJSON = await giftResponse.json()
 
-  response.render('index.liquid', {giftData: giftResponseJSON.data})
+  // alle bookmarked items
+  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={%22milledoni_users_id%22:%222%22}')
+  const bookmarkedJSON = await bookmarked.json()
+
+  let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
+    return bookmark.milledoni_products_id
+  })
+
+  response.render('index.liquid', {giftData: giftResponseJSON.data, bookmarks: bookmarks})
 })
 
 
@@ -77,7 +85,6 @@ app.post('/:id', async function (request, response) {
     })
     console.log('Product opgeslagen')
   }
-
 
   // Redirect terug naar de index pagina
   response.redirect('/')
@@ -169,7 +176,7 @@ app.get('/bookmark-overzicht', async function (request, response) {
 app.get('/bookmark-list/:name', async function (request, response) {
   const getName = request.params.name;
 
-  // haal jou list op
+  // haal alle items uit jou lijst op
   const yourList = `https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.milledoni_products_id&filter={"name":{"_icontains":"${getName}"}}`
   const yourListResponse = await fetch(yourList)
   const yourListResponseJSON = await yourListResponse.json()

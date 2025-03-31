@@ -140,7 +140,7 @@ a {
     }
 }
 
-.bookmark-add {
+.bookmark-icon {
     background-color: var(--background-primary);
     color: var(--text-highlight);
     border: none;

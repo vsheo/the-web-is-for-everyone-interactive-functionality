@@ -22,9 +22,10 @@
         </div>
     </section>
 
-    <!-- container-gift uit partials -->
-    {% render 'partials/container-gift.liquid', giftData: giftData %}
+    {{ bookmarks | json }}
 
+    <!-- container-gift uit partials -->
+    {% render 'partials/container-gift.liquid', giftData: giftData, bookmarks: bookmarks %}
 </main>
 
 {% render 'partials/foot.liquid' %}
