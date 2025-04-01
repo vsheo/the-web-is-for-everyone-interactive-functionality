@@ -2,7 +2,7 @@
 <section class="container-gift">
     <!-- artricle-gift uit partials -->
     {% for gift in giftData %}
-    {% render 'partials/article-gift.liquid', gift: gift, bookmarks: bookmarks %}
+        {% render 'partials/article-gift.liquid', gift: gift, bookmarks: bookmarks %}
     {%- endfor %}
 
     <!-- reminder to log in -->

@@ -4,8 +4,8 @@
     <!-- artricle-gift uit partials -->
     {% for cadeau in myList %}
         {% render 'partials/article-gift.liquid', gift: cadeau, bookmarks: bookmarks %}
-        {%- else %}
-    {% render 'partials/empty.liquid' %}
+    {%- else %}
+        {% render 'partials/empty.liquid' %}
     {%- endfor %}
 </main>
 
