@@ -109,8 +109,78 @@ container details pagina:
 
 
 ### JavaScript
+#### Loader
+als er op een link wordt geklikt, dan komt er een loading bar (circle) op beeld.
+dit werkt door een event listener te plaatsen op alle anchor tags. als 1 geklikt wordt dan komt de loading bar op beeld.
+en als de back button gekliokt wordt dan wordt de loading batr weer op display none gezet met een event listener op pageshow
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/public/main.js#L1-L27
+
+#### back button
+Op de detrails pagina is er een back button.
+maar omdat je via de index pagina maar ook via de bookmark list pagina naar dedetails pagina kan gaan. kon ik niet een "href" plaatsen om 1 pagina terug te gaan.
+daarom heb ik met javascript "window.history.back();" gebruikt om naar de vorige pagina te gaan nadat er op de button geklikt wordt
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/public/main.js#L30-L43
+
+#### client side fetch
+
 
 ### Routes
+#### cadeau opslaan in bookmarks list
+op de index pagina heeft elke cadeau een post method op de bookmark icon.
+als deze icon geklikt wordt, dan wordt het toegevoegd aan de bookmarks list in de database.
+dit wordt gedaan door de id van het cadeau mee te geven.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/views/partials/article-gift.liquid#L4
+in server.js wordt deze id opgehaald met request.params.id. deze id gebruik ik in een fetch url.
+deze url filtert specifiek naar deze cadeau in de bookmarks list.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L54-L60
+met een if statement wordt gekeken als er iets staat in de JSON die de url fetched.
+als de data.length van de JSON die gefetched is groter is dan 0, betekent het dat het al in de bookmarks list staat.
+het cadeau wordt dan met "DELETE" uit de database gehaald
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L62-L73
+als het leeg terug komt, betekent het dat het cadeau nog niet in de bookmarks list staat.
+Nu kunne we het toevoegen aan de bookmarks list met een "POST".
+Dat doen we door de id van het cadeau op te slaan als "milledoni_products_id" en ook een user id mee te geven zodat je het cadeau in je eigen lijst kan opslaan.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L74-L91
+nadat dit gedaan is wordt de gebruiker weer terug gebracht naar de index pagina
+
+
+#### link naar de details pagina
+wanneer er op de titl  van het cadeau geklikt wordt. dan kom je op de details pagina van dat cadeau terecht.
+dit wordt gedaan door de slug mee tegeven in de link.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/views/partials/article-gift.liquid#L13
+in server.js wordt de sluig met request.params opgehaald. hiermee wordt een fetch url gemaakt dat filterd op deze het cadeau met deze slug.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L97-L104
+De data van het cadeau wordt daarna meegegeven naar de details pagina
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L109
+in de URL staat de slug van het cadeau, hiermee kan de gebruiker ook zien op welke pagina hij is.
+
+#### bookmark list pagina
+op de bookmarks overzicht pagina, kan je een lijst open maken. dit wordt gedaan door de name van de lijst mee tegeven
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/views/bk-overzicht.liquid#L10-L12
+in server.js wordt deze name gebruikt om een fetch url te maken die alle opgeslagen cadeautjes van die lijst ophaald
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L179-L182
+Deze url haalt alleen de id van het cadeau op maar niet derest van de data.
+omdat "milledoni_products_id" uit de vorige URL overeen komt met de "id" in de JSON met alle cadeau data. kunnen we een array maken met alle id's.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L184-L191
+Nu kunnen we met deze id's een nieuwe fetch URL maken die derest van de data ophaalt. Directus heeft al een methode om een array mee te geven in een URL.
+Dus wij moeten dan alleen nog de filter schrijven en de array op de juiuste plek plaatsen
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L195
+Deze data wordt aan de bookmarks list pagina meegegeven om de cadeau articles in te laden.
+
+
+#### error 404
+Als er een URL is die niet bestaat dan komt de geb ruiker op een error 404 pagina terecht.
+als de response van de url 404 terug geeft dan is de pagina niet gevonden.
+in dat geval gebruiken we render('404.liquid') op de error pagina in te laden
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L204-L207
+
+#### mobile testing
+in de app.listen heb ik '0.0.0.0'  toegevoegd. dit luisterd naar alle HTTP requests op het netwerk.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L251
+je kan deze localhost website op je telefoon testen met het volgende:
+"de ip addres van de computer":8000
+8000 is de poort nummer die je zelf meegeeft voor de localhost
+
 
 ### UI states
 
