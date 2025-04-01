@@ -130,6 +130,7 @@ header {
     display: none;
 }
 
+
 .index-main {
     @media (min-width: 1100px) {
         display: flex;
@@ -551,6 +552,7 @@ header {
         }
     }
 }
+
 
 .error-404-message {
     display: flex;
