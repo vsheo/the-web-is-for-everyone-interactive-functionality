@@ -47,39 +47,40 @@ Op de Milledoni website kan hij door cadeautjes scrollen, beschrijvingen lezen e
 Voor het grootste deel van de responsiveheid op de indexpagina heb ik een grid gebruikt om automatisch een nieuwe kolom te maken zodra er voldoende ruimte is. Hiervoor heb ik in mijn grid-template-columns de functie repeat met auto-fit gebruikt om de kolommen te herhalen. Daarbij heb ik ook minmax toegepast om de minimale breedte te bepalen voordat er een nieuwe kolom wordt toegevoegd.
 Dit heb ik gedaan om minder met mediaqueries te werken en om te veel witruimte op grote schermen te voorkomen, doordat er automatisch een nieuwe kolom wordt toegevoegd.
 
-De index pagina is responsive vanaf 320 pixels.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-320px" style="width: 50%;">
-Het eerste breakpoint is op 700px.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-700px" style="width: 50%;">
-Bij 800px wordt er een extra kolom toegevoegd
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-880px" style="width: 50%;">
-Bij 1100px begint de eerste laptop versie.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-1100px" style="width: 50%;">
-Voor schermen breder dan 1100px wordt er een extra kolom toegevoegd zodra er genoeg ruimte voor is.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-normaal" style="width: 50%;">
+De index pagina is responsive vanaf 320 pixels.<br/>
+<img src="/bewijslast/resp-index-320px.png" alt="resp-index-320px" style="width: 50%;"><br/>
+Het eerste breakpoint is op 700px.<br/>
+<img src="/bewijslast/resp-index-700px.png" alt="resp-index-700px" style="width: 50%;"><br/>
+Bij 800px wordt er een extra kolom toegevoegd.<br/>
+<img src="/bewijslast/resp-index-880px.png" alt="resp-index-880px" style="width: 50%;"><br/>
+Bij 1100px begint de eerste laptop versie.<br/>
+<img src="/bewijslast/resp-index-1100px.png" alt="resp-index-1100px" style="width: 50%;"><br/>
+Voor schermen breder dan 1100px wordt er een extra kolom toegevoegd zodra er genoeg ruimte voor is.<br/>
+<img src="/bewijslast/resp-index-normaal.png" alt="resp-index-normaal" style="width: 50%;"><br/>
  
 
 #### details pagina
-De details pagina is responsive vanaf 320 pixels.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-320px" style="width: 50%;">
-Als het scherm breder is, neemt de tekst meer ruimte in beslag.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-530px" style="width: 50%;">
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-700px" style="width: 50%;">
-Dit is de tabletversie, en daaronder bevindt zich een grotere tabletversie. De laptopversie is nog niet af.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-820px" style="width: 50%;">
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-normaal" style="width: 50%;">
+De details pagina is responsive vanaf 320 pixels.<br/>
+<img src="/bewijslast/resp-details-320px.png" alt="resp-details-320px" style="width: 50%;"><br/>
+Als het scherm breder is, neemt de tekst meer ruimte in beslag.<br/>
+<img src="/bewijslast/resp-details-530px.png" alt="resp-details-530px" style="width: 50%;"><br/>
+<img src="/bewijslast/resp-details-700px.png" alt="resp-details-700px" style="width: 50%;"><br/>
+Dit is de tabletversie.<br/>
+<img src="/bewijslast/resp-details-820px.png" alt="resp-details-820px" style="width: 50%;"><br/>
+De laptopversie is nog niet af, dit is voorlopig de laptop versie.<br/>
+<img src="/bewijslast/resp-details-normaal.png" alt="resp-details-normaal" style="width: 50%;"><br/>
 
 
 #### bookmarks overzicht pagina
-Deze pagina is nog niet responsive, dit is de één-kolomsversie.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-overzicht" style="width: 50%;">
+Deze pagina is nog niet responsive, dit is de één-kolomsversie.<br/>
+<img src="/bewijslast/resp-bk-overzicht.png" alt="resp-bk-overzicht" style="width: 50%;">
 
 
 #### bookmarkslijst pagina
-De bookmarkslijst pagina is ook responsive vanaf 320 pixels.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-lijst-320px" style="width: 50%;">
-Deze pagina gebruikt hetzelfde grid als de indexpagina. Zodra er genoeg ruimte is, wordt er een extra kolom toegevoegd.
-<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-lijst-normaal" style="width: 50%;">
+De bookmarkslijst pagina is ook responsive vanaf 320 pixels.<br/>
+<img src="/bewijslast/resp-bk-lijst-320px.png" alt="resp-bk-lijst-320px" style="width: 50%;"><br/>
+Deze pagina gebruikt hetzelfde grid als de indexpagina. Zodra er genoeg ruimte is, wordt er een extra kolom toegevoegd.<br/>
+<img src="/bewijslast/resp-bk-lijst-normaal.png" alt="resp-bk-lijst-normaal" style="width: 50%;"><br/>
 
 
 ### CSS
@@ -104,9 +105,9 @@ hier zijn de font-weight cuistom properties in css stylesheet
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/milledoni.css#L39-L44
 
 ### Styles.css
-In de Liquid files, afgezien van de partials, heeft elke pagina zijn eigen main bestand. Deze worden bijvoorbeeld genoemd: index-main, details-main, enzovoort.
-In CSS worden alle stijlen per pagina genest
-<img src="URL_VAN_DE_AFBEELDING" alt="css-main-nest" style="width: 50%;">
+In de Liquid-bestanden hebben de partials en elke pagina hun eigen CSS, die genest is. De main van de pagina's wordt genoemd naar de pagina naam, gevolgd door -main. Voor de partials gebruiken ze de class van de container.<br/>
+<img src="/bewijslast/css-main-nest.png" alt="css-main-nest" style="width: 50%;"><br/>
+<img src="/bewijslast/css-partials-nest.png" alt="css-partials-nest" style="width: 50%;">
 
 Verder zijn alle HTML blokken in CSS ook genest. Bijvoorbeeld een article met meerdere elementen daarin.
 In HTML geef ik het een class, en in CSS worden alle elementen binnen die class op dezelfde volgorde genest.
@@ -133,12 +134,12 @@ Als er een aanpassing in de HTML nodig is, hoeft dit maar op één plek te gebeu
 #### Cadeau
 Dit article voor de cadeautjes wordt gebruikt op de index pagina, de detail pagina en de bookmarklijst pagina.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/article-gift.liquid#L1-L15
-Cadeau index pagina:
-<img src="URL_VAN_DE_AFBEELDING" alt="dry-article-1" style="width: 50%;">
-Cadeau details pagina:
-<img src="URL_VAN_DE_AFBEELDING" alt="dry-article-2" style="width: 50%;">
-Cadeau bookmarks pagina:
-<img src="URL_VAN_DE_AFBEELDING" alt="dry-article-3" style="width: 50%;">
+Cadeau index pagina:<br/>
+<img src="/bewijslast/dry-article-1.png" alt="dry-article-1" style="width: 50%;"><br/>
+Cadeau details pagina:<br/>
+<img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;"><br/>
+Cadeau bookmarks pagina:<br/>
+<img src="/bewijslast/dry-article-3.png" alt="dry-article-3" style="width: 50%;">
 
 #### Cadeau container
 De container onderaan de detail pagina is hetzelfde als op de index pagina, met een paar kleine verschillen.
@@ -147,10 +148,10 @@ Dit is de CSS voor de container:
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L593-L655
 Hier wordt op de details pagina andere margins aangegeven
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L481-L487
-container index pagina:
-<img src="URL_VAN_DE_AFBEELDING" alt="dry-container-1" style="width: 50%;">
-container details pagina:
-<img src="URL_VAN_DE_AFBEELDING" alt="dry-article-2" style="width: 50%;">
+container index pagina:<br/>
+<img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 50%;"><br/>
+container details pagina:<br/>
+<img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;">
 
 
 ### JavaScript
@@ -220,8 +221,8 @@ Als er een URL is die niet bestaat, komt de gebruiker op een error 404 pagina te
 Als de response van de URL een 404 statuscode teruggeeft, betekent dit dat de pagina niet gevonden is.
 In dat geval gebruiken we render('404.liquid') om de error pagina in te laden.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L204-L207
-Op deze pagina is er een link terug naar de hoofdpagina.
-<img src="URL_VAN_DE_AFBEELDING" alt="error-404-pagina" style="width: 50%;">
+Op deze pagina is er een link terug naar de hoofdpagina.<br/>
+<img src="/bewijslast/error-404-pagina.png" alt="error-404-pagina" style="width: 50%;">
 
 
 #### mobile testing
@@ -235,18 +236,20 @@ Je kunt deze localhost website op je telefoon testen met het volgende:
 ### UI states
 #### success state
 Wanneer er op het bookmark-icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst.
-Als dit succesvol is, wordt het bookmark icoon ingekleurd, zodat de gebruiker kan zien welke cadeaus al in zijn bookmark lijst staan.
-<img src="URL_VAN_DE_AFBEELDING" alt="add-to-bookmarks" style="width: 50%;">
+Als dit succesvol is, wordt het bookmark icoon ingekleurd, zodat de gebruiker kan zien welke cadeaus al in zijn bookmark lijst staan.<br/>
+
+https://github.com/user-attachments/assets/e166483b-825c-41f3-8434-9163c710869c
 
 
 #### empty state
 Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.
-<img src="URL_VAN_DE_AFBEELDING" alt="empty-bookmark-list" style="width: 50%;">
+<img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
 
 
 #### loading state
-Voor linkjes tussen pagina's komt er een loader in beeld, zodat de gebruiker weet dat er iets gebeurt.
-<img src="URL_VAN_DE_AFBEELDING" alt="loading-state" style="width: 50%;">
+Voor linkjes tussen pagina's komt er een loader in beeld, zodat de gebruiker weet dat er iets gebeurt.<br/>
+
+https://github.com/user-attachments/assets/5c59a533-e9a8-4155-8b20-5cfcf41b487b
 
 
 ## Installatie
