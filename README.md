@@ -8,10 +8,41 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
+
   * [Gebruik](#gebruik)
+
   * [Kenmerken](#kenmerken)
+      * [Responsive](##Responsive)<br/>
+          * [index pagina](#index-pagina)<br/>
+          * [details pagina](#details-pagina)<br/>
+          * [bookmarks overzicht pagina](#bookmarks-overzicht-pagina)<br/>
+          * [bookmarkslijst pagina](#bookmarkslijst-pagina)<br/>
+      * [CSS](#CSS)<br/>
+          * [Styleguide](#Styleguide)<br/>
+          * [Styles.css](#Styles.css)<br/>
+      * [HTML](#HTML)<br/>
+          * [Liquid partials](#Liquid-partials)<br/>
+              * [Cadeau](#Cadeau)<br/>
+              * [Cadeau container](#Cadeau-container)<br/>
+      * [JavaScript](#JavaScript)<br/>
+          * [Loader](#Loader)<br/>
+          * [back button](#back-button)<br/>
+          * [client side fetch](#client-side-fetch)<br/>
+      * [Routes](#Routes)<br/>
+          * [cadeau opslaan in bookmarks list](#cadeau-opslaan-in-bookmarks-list)<br/>
+          * [link naar de details pagina](#link-naar-de-details-pagina)<br/>
+          * [bookmark list pagina](#bookmark-list-pagina)<br/>
+          * [error 404](#error-404)<br/>
+          * [mobile testing](#mobile-testing)<br/>
+      * [UI states](#UI-states)<br/>
+          * [success state](#success-state)<br/>
+          * [empty state](#empty-state)<br/>
+          * [loading state](#loading-state)<br/>
+
   * [Installatie](#installatie)
+
   * [Bronnen](#bronnen)
+
   * [Licentie](#licentie)
 
 ## Beschrijving
@@ -242,7 +273,7 @@ https://github.com/user-attachments/assets/e166483b-825c-41f3-8434-9163c710869c
 
 
 #### empty state
-Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.
+Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.<br/>
 <img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
 
 
