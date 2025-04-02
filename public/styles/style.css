@@ -130,7 +130,6 @@ header {
     display: none;
 }
 
-
 .index-main {
     @media (min-width: 1100px) {
         display: flex;
@@ -564,7 +563,6 @@ header {
     margin-top: 3em;
 }
 
-
 .error-404-message {
     display: flex;
     flex-direction: column;
@@ -582,25 +580,6 @@ header {
         color: blue;
     }
 }
-
-.empty-state {
-    width: 15em;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    figcaption {
-        text-align: center;
-    }
-
-    video {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-}
-
 
 /* uit partials */
 /* de container voor alle gifts op de index pagina en op de details pagina */
@@ -714,6 +693,24 @@ header {
     .gift-title {
         grid-area: title;
         margin: .5em .5em;
+    }
+}
+
+.empty-state {
+    width: 15em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    figcaption {
+        text-align: center;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
 
