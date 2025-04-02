@@ -173,6 +173,9 @@ Als er een URL is die niet bestaat dan komt de geb ruiker op een error 404 pagin
 als de response van de url 404 terug geeft dan is de pagina niet gevonden.
 in dat geval gebruiken we render('404.liquid') op de error pagina in te laden
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L204-L207
+op deze pagina is er een link terug naar de hoofd pagina
+<img src="URL_VAN_DE_AFBEELDING" alt="error-404-pagina" style="width: 50%;">
+
 
 #### mobile testing
 in de app.listen heb ik '0.0.0.0'  toegevoegd. dit luisterd naar alle HTTP requests op het netwerk.
@@ -183,6 +186,20 @@ je kan deze localhost website op je telefoon testen met het volgende:
 
 
 ### UI states
+#### success state
+wanneer er op de bookmark icon geklikt wordt, dan wordt het cadeau toegeveopd aan de bookmarks lijst.
+als dit successvol gedaan is, dan wordt de bookmark ingekleurd.
+<img src="URL_VAN_DE_AFBEELDING" alt="add-to-bookmarks" style="width: 50%;">
+
+
+#### empty state
+als er geen cadeaus zijn opgeslagen in de bookmarks lijst, dan is er op de bookmarks lijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.
+<img src="URL_VAN_DE_AFBEELDING" alt="empty-bookmark-list" style="width: 50%;">
+
+
+#### loading state
+voor linkjes tussen pagina's is er een komt er een loader op beeld, zodat de gebruiker weet dat er iets gebeurt
+<img src="URL_VAN_DE_AFBEELDING" alt="loading-state" style="width: 50%;">
 
 
 ## Installatie
