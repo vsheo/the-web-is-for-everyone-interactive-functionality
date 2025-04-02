@@ -19,7 +19,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
           * [bookmarkslijst pagina](#bookmarkslijst-pagina)<br/>
       * [CSS](#CSS)<br/>
           * [Styleguide](#Styleguide)<br/>
-          * [Styles.css](#Styles.css)<br/>
+          * [Styles](#Styles)<br/>
       * [HTML](#HTML)<br/>
           * [Liquid partials](#Liquid-partials)<br/>
               * [Cadeau](#Cadeau)<br/>
@@ -135,7 +135,7 @@ voor de font weight benaming heb ik aangehouden hoe het in de font .ttf file hee
 hier zijn de font-weight cuistom properties in css stylesheet
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/milledoni.css#L39-L44
 
-### Styles.css
+### Styles
 In de Liquid-bestanden hebben de partials en elke pagina hun eigen CSS, die genest is. De main van de pagina's wordt genoemd naar de pagina naam, gevolgd door -main. Voor de partials gebruiken ze de class van de container.<br/>
 <img src="/bewijslast/css-main-nest.png" alt="css-main-nest" style="width: 50%;"><br/>
 <img src="/bewijslast/css-partials-nest.png" alt="css-partials-nest" style="width: 50%;">
