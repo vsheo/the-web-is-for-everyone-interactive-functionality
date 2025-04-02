@@ -12,7 +12,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
   * [Gebruik](#gebruik)
 
   * [Kenmerken](#kenmerken)
-      * [Responsive](##Responsive)<br/>
+      * [Responsive](#Responsive)<br/>
           * [index pagina](#index-pagina)<br/>
           * [details pagina](#details-pagina)<br/>
           * [bookmarks overzicht pagina](#bookmarks-overzicht-pagina)<br/>
