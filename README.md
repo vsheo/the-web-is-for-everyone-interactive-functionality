@@ -18,23 +18,27 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual of video toe 📸 -->
 <!-- Voeg een link toe naar GitHub Pages 🌐-->
-als je op de pagina terecht komt zie je aan de linker kan van de pagina een searchbar met tekst dat de gebruiker aanleid om te zoeken naar cadeautjes.
-aan de rechterkant is er een container waardoor gescrolled kan worden, de rest van de pagina blijft scrolled niet mee.
-als er op een cadeau geklikt wordt dan kom je op de details pagina terecht.
-elk cadeau in deze container heeft een bookmark icon. als hierop gekjlikt wordt dan wordt het toegevoegd aan jou lijst.
+Wanneer je op de pagina komt, zie je aan de linkerkant een search bar met tekst die de gebruiker uitnodigd om cadeautjes te zoeken.
+Aan de rechterkant bevindt zich een scrollbare container, de rest van de pagina beweegt niet mee.
+Wanneer je op een cadeau klikt, word je doorgestuurd naar de detailpagina.
+Elk cadeau heeft een bookmark icoon. Als je hierop klikt, wordt het toegevoegd aan jouw lijst.
 
-op elke pagina is er in de header een button om naar jou bookmark lijst te gaan. als je hierop klikt kom je eerst op een overzicht pagina waar je al jou lijsten kan zien. als je op een van de lijsten klikt zie je alle bookmarked cadeautjes in die lijst. als je weer op het bnookmark icon klikt dan gaat het cadeau uit je lijst.
-en als je op de titel klikt beland je op de details pagina
+Op elke pagina bevindt zich in de header een button om naar jouw bookmarklijst te gaan.
+Wanneer je hierop klikt, kom je eerst op een overzichtspagina waar je al jouw lijsten kunt bekijken.
+Als je op een van de lijsten klikt, zie je alle opgeslagen cadeautjes in die lijst.
+Klik je opnieuw op het bookmark icoon, dan wordt het cadeau uit je lijst verwijderd.
+Wanneer je op de titel klikt, word je naar de detailpagina geleid.
 
-Op de details pagina staat een beschrijving van het cadeau. een paar plekken waar het cadeau gekocht kan worden.
-en daar onder meer cadeau recomendaties.
+Op de detailpagina staat een beschrijving van het cadeau, samen met winkels waar het cadeau gekocht kan worden.
+Daaronder vind je meer cadeau recommendaties.
 
-de live site op render, het kan evben duren voor de website om in te laden.
+De live site staat op Render. Het kan even duren voordat de website is geladen.
 [Milledoni.nl](https://the-web-is-for-everyone-interactive-7ked.onrender.com)
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
-De website is bedoelt voor iemand die naar een cadeau zoekt maar niet weet wat hij als cadeeau kan geven. op de milledoni website kan hij door cadeazutjes scrollen beschrijving lezen. en als hij het wilt opslaan voor later dan kan hij het in zijn bookmark lijst plaatsen.
+De website is bedoeld voor iemand die een cadeau zoekt maar niet weet wat hij moet geven.
+Op de Milledoni website kan hij door cadeautjes scrollen, beschrijvingen lezen en, als hij iets wil opslaan voor later, het in zijn bookmarklijst kan plaatsen.
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
@@ -63,29 +67,34 @@ hier zijn de font-weight cuistom properties in css stylesheet
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/milledoni.css#L39-L44
 
 ### Styles.css
-in de liquid files, apart van de partials, hebben allemaal hun eigen main. deze wordt genoemd index-main, details-main enz.
-in CSS worden alle styles genest per pagina
+In de Liquid files, afgezien van de partials, heeft elke pagina zijn eigen main bestand. Deze worden bijvoorbeeld genoemd: index-main, details-main, enzovoort.
+In CSS worden alle stijlen per pagina genest
 <img src="URL_VAN_DE_AFBEELDING" alt="css-main-nest" style="width: 50%;">
 
-verder zijn alle html blokken in css ook genest. bijvoorbeeld een article met meerdere elementen ndaarin.
-In HTml geef ik het een class, in css worden alle elementen daarin genest, met de zelfde volgorde.
-voorbeeld article:
+Verder zijn alle HTML blokken in CSS ook genest. Bijvoorbeeld een article met meerdere elementen daarin.
+In HTML geef ik het een class, en in CSS worden alle elementen binnen die class op dezelfde volgorde genest.
+Voorbeeld van een article:
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/details.liquid#L40-L46
-bijbehorende CSS:
+Bijbehorende CSS:
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L405-L433
 
 
 ### HTML
-in HTML zijn hebben de blok elementen een lege regel erboven en eronder, zoals articles
-inline elementen zijn op 1 regel, zoals svg, anchor-tags.
-er zijn soms uitzonderingen zoals een achortag met een svg en tekst, de svg en de tekst krijgen beide hun eigen regel, zodat we alle elementen binnen de anchor tag kunnen zien.
+In HTML hebben blok elementen, zoals article, een lege regel erboven en eronder.
+Inline elementen, zoals svg en anchor tag, staan op één regel.
+
+Er zijn soms uitzonderingen, zoals een anchor tag met een svg en tekst erin. In dat geval krijgen zowel de svg als de tekst hun eigen regel, zodat alle elementen binnen de anchor tag zichtbaar blijven.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/afb3224aaba5e9caf5f866d23883bb46761f9c2a/views/bk-overzicht.liquid#L26-L29
+
 
 ### Liquid partials
-De stukken HTML-code die vaker herhaald worden op de website, zijn in een eigen Liquid file geplaatst. Dit is gedaan zodat ze met Liquid op de juiste plek ingeladen kunnen worden.
+De herhalende stukken HTML code op de website zijn in een aparte Liquid file geplaatst.
+Hierdoor kunnen ze met Liquid op de juiste plek worden ingeladen.
 Als er een aanpassing in de HTML nodig is, hoeft dit maar op één plek te gebeuren.
 
+
 #### Cadeau
-deze article voor de cadeautjes wordt gebruikt op de index pagina, de detaisl pagina en op de bookmark lijst pagina.
+Dit article voor de cadeautjes wordt gebruikt op de index pagina, de detail pagina en de bookmarklijst pagina.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/article-gift.liquid#L1-L15
 Cadeau index pagina:
 <img src="URL_VAN_DE_AFBEELDING" alt="dry-article-1" style="width: 50%;">
@@ -95,13 +104,12 @@ Cadeau bookmarks pagina:
 <img src="URL_VAN_DE_AFBEELDING" alt="dry-article-3" style="width: 50%;">
 
 #### Cadeau container
-De container onderaan op de details pagina is hetzelfde als op de index pagina, met een paar kleine verschillen. De code voor de container is in css op een plek geplaats waar het op beide paginas zal werken. voor kleine aanpassingen per pagina, zoals margins, zijn genest zodat ze elkaar niet beinvloeden
-dit is de css voor de contrainer:
+De container onderaan de detail pagina is hetzelfde als op de index pagina, met een paar kleine verschillen.
+De code voor de container is in CSS op een centrale plek geplaatst, zodat deze op beide pagina's werkt. Voor kleine aanpassingen per pagina, zoals margins, zijn deze genest, zodat ze elkaar niet beïnvloeden.
+Dit is de CSS voor de container:
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L593-L655
-
 Hier wordt op de details pagina andere margins aangegeven
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L481-L487
-
 container index pagina:
 <img src="URL_VAN_DE_AFBEELDING" alt="dry-container-1" style="width: 50%;">
 container details pagina:
@@ -110,15 +118,15 @@ container details pagina:
 
 ### JavaScript
 #### Loader
-als er op een link wordt geklikt, dan komt er een loading bar (circle) op beeld.
-dit werkt door een event listener te plaatsen op alle anchor tags. als 1 geklikt wordt dan komt de loading bar op beeld.
-en als de back button gekliokt wordt dan wordt de loading batr weer op display none gezet met een event listener op pageshow
+Als er op een link wordt geklikt, verschijnt er een loading bar (cirkel) op het scherm.
+Dit werkt door een event listener toe te voegen aan alle anchor-tags. Wanneer er op een link wordt geklikt, verschijnt de laadbalk.
+Als de terugknop wordt ingedrukt, wordt de laadbalk weer verborgen door een event listener op pageshow te gebruiken.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/public/main.js#L1-L27
 
 #### back button
-Op de detrails pagina is er een back button.
-maar omdat je via de index pagina maar ook via de bookmark list pagina naar dedetails pagina kan gaan. kon ik niet een "href" plaatsen om 1 pagina terug te gaan.
-daarom heb ik met javascript "window.history.back();" gebruikt om naar de vorige pagina te gaan nadat er op de button geklikt wordt
+Op de detailpagina is er een terugknop.
+Omdat je zowel via de index pagina als via de bookmarklijst pagina naar de detail pagina kunt gaan, kon ik geen "href" gebruiken om naar de vorige pagina terug te gaan.
+Daarom heb ik met JavaScript de functie window.history.back(); gebruikt, zodat je naar de vorige pagina wordt geleid wanneer er op de knop wordt geklikt.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/public/main.js#L30-L43
 
 #### client side fetch
@@ -126,79 +134,81 @@ https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/
 
 ### Routes
 #### cadeau opslaan in bookmarks list
-op de index pagina heeft elke cadeau een post method op de bookmark icon.
-als deze icon geklikt wordt, dan wordt het toegevoegd aan de bookmarks list in de database.
-dit wordt gedaan door de id van het cadeau mee te geven.
+Op de index pagina heeft elk cadeau een POST methode gekoppeld aan het bookmark icoon.
+Wanneer dit icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst in de database.
+Dit gebeurt door de ID van het cadeau mee te geven.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/views/partials/article-gift.liquid#L4
-in server.js wordt deze id opgehaald met request.params.id. deze id gebruik ik in een fetch url.
-deze url filtert specifiek naar deze cadeau in de bookmarks list.
+In server.js wordt de id opgehaald met request.params.id. Deze id gebruik ik vervolgens in een fetch URL.
+De URL filtert specifiek naar dit cadeau in de bookmarklijst.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L54-L60
-met een if statement wordt gekeken als er iets staat in de JSON die de url fetched.
-als de data.length van de JSON die gefetched is groter is dan 0, betekent het dat het al in de bookmarks list staat.
-het cadeau wordt dan met "DELETE" uit de database gehaald
+Met een if statement wordt gecontroleerd of er iets staat in de JSON die door de URL wordt opgehaald.
+Als data.length van de gefetchte JSON groter is dan 0, betekent dit dat het cadeau al in de bookmarklijst staat.
+Het cadeau wordt dan met de DELETE methode uit de database verwijderd.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L62-L73
-als het leeg terug komt, betekent het dat het cadeau nog niet in de bookmarks list staat.
-Nu kunne we het toevoegen aan de bookmarks list met een "POST".
-Dat doen we door de id van het cadeau op te slaan als "milledoni_products_id" en ook een user id mee te geven zodat je het cadeau in je eigen lijst kan opslaan.
+Als de respons leeg is, betekent dit dat het cadeau nog niet in de bookmarklijst staat.
+Nu kunnen we het toevoegen aan de bookmarklijst met een POST methode.
+Dit doen we door de id van het cadeau op te slaan als milledoni_products_id en ook een user-id mee te geven, zodat het cadeau in de persoonlijke lijst van de gebruiker kan worden opgeslagen.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L74-L91
-nadat dit gedaan is wordt de gebruiker weer terug gebracht naar de index pagina
+Nadat dit is gedaan, wordt de gebruiker weer teruggebracht naar de indexpagina.
 
 
 #### link naar de details pagina
-wanneer er op de titl  van het cadeau geklikt wordt. dan kom je op de details pagina van dat cadeau terecht.
-dit wordt gedaan door de slug mee tegeven in de link.
+Wanneer er op de titel van het cadeau wordt geklikt, kom je op de detailpagina van dat cadeau terecht.
+Dit wordt gedaan door de slug mee te geven in de link.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/views/partials/article-gift.liquid#L13
-in server.js wordt de sluig met request.params opgehaald. hiermee wordt een fetch url gemaakt dat filterd op deze het cadeau met deze slug.
+In server.js wordt de slug opgehaald met request.params. Hiermee wordt een fetch URL gemaakt die filtert op het cadeau met deze slug.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L97-L104
-De data van het cadeau wordt daarna meegegeven naar de details pagina
+De data van het cadeau wordt daarna meegegeven naar de detail pagina.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/server.js#L109
-in de URL staat de slug van het cadeau, hiermee kan de gebruiker ook zien op welke pagina hij is.
+In de URL staat de slug van het cadeau, waardoor de gebruiker ook kan zien op welke pagina hij zich bevindt.
+
 
 #### bookmark list pagina
-op de bookmarks overzicht pagina, kan je een lijst open maken. dit wordt gedaan door de name van de lijst mee tegeven
+Op de bookmarks overzichtpagina kun je een lijst openen. Dit wordt gedaan door de name van de lijst mee te geven.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/views/bk-overzicht.liquid#L10-L12
-in server.js wordt deze name gebruikt om een fetch url te maken die alle opgeslagen cadeautjes van die lijst ophaald
+In server.js wordt de naam gebruikt om een fetch URL te maken die alle opgeslagen cadeautjes van die lijst ophaalt.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L179-L182
-Deze url haalt alleen de id van het cadeau op maar niet derest van de data.
-omdat "milledoni_products_id" uit de vorige URL overeen komt met de "id" in de JSON met alle cadeau data. kunnen we een array maken met alle id's.
+Deze URL haalt alleen de id van het cadeau op, maar niet de rest van de data.
+Omdat milledoni_products_id uit de vorige URL overeenkomt met de id in de JSON met alle cadeaugegevens, kunnen we een array maken met alle milledoni_products_id's
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L184-L191
-Nu kunnen we met deze id's een nieuwe fetch URL maken die derest van de data ophaalt. Directus heeft al een methode om een array mee te geven in een URL.
-Dus wij moeten dan alleen nog de filter schrijven en de array op de juiuste plek plaatsen
+Nu kunnen we met deze id's een nieuwe fetch URL maken die de rest van de data ophaalt.
+Directus heeft al een methode om een array mee te geven in een URL.
+Dus hoeven wij alleen nog de filter te schrijven en de array op de juiste plek in de URL te plaatsen.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L195
-Deze data wordt aan de bookmarks list pagina meegegeven om de cadeau articles in te laden.
+Deze data wordt meegegeven aan de bookmarklijst pagina om de cadeau artikelen in te laden.
 
 
 #### error 404
-Als er een URL is die niet bestaat dan komt de geb ruiker op een error 404 pagina terecht.
-als de response van de url 404 terug geeft dan is de pagina niet gevonden.
-in dat geval gebruiken we render('404.liquid') op de error pagina in te laden
+Als er een URL is die niet bestaat, komt de gebruiker op een error 404 pagina terecht.
+Als de response van de URL een 404 statuscode teruggeeft, betekent dit dat de pagina niet gevonden is.
+In dat geval gebruiken we render('404.liquid') om de error pagina in te laden.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L204-L207
-op deze pagina is er een link terug naar de hoofd pagina
+Op deze pagina is er een link terug naar de hoofdpagina.
 <img src="URL_VAN_DE_AFBEELDING" alt="error-404-pagina" style="width: 50%;">
 
 
 #### mobile testing
-in de app.listen heb ik '0.0.0.0'  toegevoegd. dit luisterd naar alle HTTP requests op het netwerk.
+In de app.listen heb ik '0.0.0.0' toegevoegd. Dit zorgt ervoor dat de server luistert naar alle HTTP verzoeken op het netwerk.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/96d836ed5a0e91eb9bc55b7416a3b69aa07b008c/server.js#L251
-je kan deze localhost website op je telefoon testen met het volgende:
-"de ip addres van de computer":8000
-8000 is de poort nummer die je zelf meegeeft voor de localhost
+Je kunt deze localhost website op je telefoon testen met het volgende:
+"het IP-adres van de computer":8000
+8000 is het poortnummer dat je zelf meegeeft voor de localhost
 
 
 ### UI states
 #### success state
-wanneer er op de bookmark icon geklikt wordt, dan wordt het cadeau toegeveopd aan de bookmarks lijst.
-als dit successvol gedaan is, dan wordt de bookmark ingekleurd.
+Wanneer er op het bookmark-icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst.
+Als dit succesvol is, wordt het bookmark icoon ingekleurd, zodat de gebruiker kan zien welke cadeaus al in zijn bookmark lijst staan.
 <img src="URL_VAN_DE_AFBEELDING" alt="add-to-bookmarks" style="width: 50%;">
 
 
 #### empty state
-als er geen cadeaus zijn opgeslagen in de bookmarks lijst, dan is er op de bookmarks lijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.
+Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.
 <img src="URL_VAN_DE_AFBEELDING" alt="empty-bookmark-list" style="width: 50%;">
 
 
 #### loading state
-voor linkjes tussen pagina's is er een komt er een loader op beeld, zodat de gebruiker weet dat er iets gebeurt
+Voor linkjes tussen pagina's komt er een loader in beeld, zodat de gebruiker weet dat er iets gebeurt.
 <img src="URL_VAN_DE_AFBEELDING" alt="loading-state" style="width: 50%;">
 
 
