@@ -43,6 +43,43 @@ Op de Milledoni website kan hij door cadeautjes scrollen, beschrijvingen lezen e
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
 ### Responsive
+#### index pagina
+Voor het grootste deel van de responsiveheid op de indexpagina heb ik een grid gebruikt om automatisch een nieuwe kolom te maken zodra er voldoende ruimte is. Hiervoor heb ik in mijn grid-template-columns de functie repeat met auto-fit gebruikt om de kolommen te herhalen. Daarbij heb ik ook minmax toegepast om de minimale breedte te bepalen voordat er een nieuwe kolom wordt toegevoegd.
+Dit heb ik gedaan om minder met mediaqueries te werken en om te veel witruimte op grote schermen te voorkomen, doordat er automatisch een nieuwe kolom wordt toegevoegd.
+
+De index pagina is responsive vanaf 320 pixels.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-320px" style="width: 50%;">
+Het eerste breakpoint is op 700px.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-700px" style="width: 50%;">
+Bij 800px wordt er een extra kolom toegevoegd
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-880px" style="width: 50%;">
+Bij 1100px begint de eerste laptop versie.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-1100px" style="width: 50%;">
+Voor schermen breder dan 1100px wordt er een extra kolom toegevoegd zodra er genoeg ruimte voor is.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-index-normaal" style="width: 50%;">
+ 
+
+#### details pagina
+De details pagina is responsive vanaf 320 pixels.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-320px" style="width: 50%;">
+Als het scherm breder is, neemt de tekst meer ruimte in beslag.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-530px" style="width: 50%;">
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-700px" style="width: 50%;">
+Dit is de tabletversie, en daaronder bevindt zich een grotere tabletversie. De laptopversie is nog niet af.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-820px" style="width: 50%;">
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-details-normaal" style="width: 50%;">
+
+
+#### bookmarks overzicht pagina
+Deze pagina is nog niet responsive, dit is de één-kolomsversie.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-overzicht" style="width: 50%;">
+
+
+#### bookmarkslijst pagina
+De bookmarkslijst pagina is ook responsive vanaf 320 pixels.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-lijst-320px" style="width: 50%;">
+Deze pagina gebruikt hetzelfde grid als de indexpagina. Zodra er genoeg ruimte is, wordt er een extra kolom toegevoegd.
+<img src="URL_VAN_DE_AFBEELDING" alt="resp-bk-lijst-normaal" style="width: 50%;">
 
 
 ### CSS
