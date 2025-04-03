@@ -68,7 +68,7 @@ if ("fetch" in window && "DOMParser" in window) {
         // Voorkom de standaard submit van de browser
         // Let op: hiermee overschrijven we de default Loading state van de browser...
         event.preventDefault();
-        // terwijl de default van de browser geblokeert wordt, geven we een nieuw class aan de bookmark icoon
+        // terwijl de default van de browser geblokeert wordt, geven we een loading class aan de bookmark icoon
         form.classList.add('bookmark-loading-state')
 
         // Doe een fetch naar de server, net als hoe de browser dit normaal zou doen
@@ -95,8 +95,9 @@ if ("fetch" in window && "DOMParser" in window) {
             '[data-enhanced="' + form.getAttribute("data-enhanced") + '"]'
         );
 
-        // haal de class weg van de bookmark icoon
+        // haal de loading class weg van de bookmark icoon
         form.classList.remove('bookmark-loading-state')
+
         // Overschrijf ons formulier met de nieuwe HTML
         // Hier wil je waarschijnlijk de Loading state vervangen door een Success state
         form.outerHTML = newState.outerHTML;
