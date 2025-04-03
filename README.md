@@ -198,7 +198,28 @@ Omdat je zowel via de index pagina als via de bookmarklijst pagina naar de detai
 Daarom heb ik met JavaScript de functie window.history.back(); gebruikt, zodat je naar de vorige pagina wordt geleid wanneer er op de knop wordt geklikt.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/fcabff0ab49e02d71fb5e282755b43c2a3e9c503/public/main.js#L30-L43
 
+
 #### client side fetch
+Als er een fetch op de pagina plaatsvindt, dan gaat JavaScript luisteren naar een submit event. Het element waarop de submit plaatsvindt, slaan we op als een variabele.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L52-L57
+
+De browser wil op dat moment de pagina automatisch refreshen, maar wij voorkomen dit met preventDefault(). In plaats van een pagina refresh voegen we een class toe aan het element waarop het event plaatsvond.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L70-L72
+
+Deze class maakt de button kleiner en verlaagt de opacity. Dit blijft zo totdat het cadeau in de bookmarkslijst staat.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/styles/style.css#L584-L593
+
+Daarna doen we een fetch naar de server, die HTML teruggeeft.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L77-L84
+
+De browser zou normaal de HTML parsen naar de DOM, maar omdat we preventDefault() hebben gebruikt, moeten we dit nu zelf doen.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L88-L89
+
+Nadat we de HTML hebben ontvangen, kunnen we met het data-enhanced attribuut zoeken waar de nieuwe HTML geplaatst moet worden.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L94-L96
+
+Vervolgens kunnen we de loading class verwijderen en de nieuwe HTML in de DOM plaatsen.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/b8532f37bfce2870eaab94db1b6670be642090c8/public/main.js#L99-L102
 
 
 ### Routes
