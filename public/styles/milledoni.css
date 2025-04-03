@@ -161,3 +161,8 @@ a {
         margin-left: 0.3em;
     }
 }
+
+:focus {
+    outline: 2px solid #FF0000;
+    outline-offset: 2px;
+}
