@@ -494,8 +494,13 @@ header {
                     grid-area: title;
                 }
 
-                .svg-cart {
+                button {
                     grid-area: img;
+                    background: none;
+                    border: none;
+                    height: min-content;
+                    width: min-content;
+                    border-radius: 50%;
                     place-self: center;
                 }
 
