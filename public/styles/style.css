@@ -411,9 +411,42 @@ header {
             border-radius: 20px;
             /* max-width: 40em; */
 
+
             @media (min-width: 820px) {
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: min-content minmax(29ch, 80%) min-content minmax(29ch, 80%);
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                "svg1 title1 svg2 title2"
+                "svg1 tekst1 svg2 tekst2"
+                ;
                 margin: 1em;
+
+                .svg1 {
+                    grid-area: svg1;
+                }
+    
+                .svg2 {
+                    grid-area: svg2;
+                }
+    
+                .title1 {
+                    grid-area: title1;
+                }
+    
+                .title2 {
+                    grid-area: title2;
+                }
+                
+                .tekst1 {
+                    grid-area: tekst1;
+                    grid-row: span 1;
+                }
+    
+                .tekst2 {
+                    grid-area: tekst2;
+                    grid-row: span 1;
+                }
             }
 
             svg {
@@ -421,15 +454,15 @@ header {
                 justify-self: center;
             }
 
+            h3 {
+                font-weight: var(--font-weight-regular);
+                font-size: var(--fs-primary);
+            }
+
             p {
                 width: clamp(29ch, 80%, 60ch);
                 margin-top: 0.5em;
                 padding: 0 1em 0 1em;
-
-                span {
-                    display: block;
-                    text-align: center;
-                }
             }
         }
     }
