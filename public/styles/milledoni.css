@@ -147,10 +147,6 @@ a {
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     cursor: pointer;
-
-    &:active {
-        scale: 0.8;
-    }
 }
 
 .button-back {

@@ -581,6 +581,17 @@ header {
     }
 }
 
+/* loading state voor de bookmark icon. Deze class wordt toegevoegd aan de form. Met de button geef ik aan dat de veranderingen op de button binnen de form plaatsvinden. */
+.bookmark-loading-state {
+    button {
+        opacity: 0.6;
+        scale: 0.8;
+        pointer-events: none;
+        transition: 0.3s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
 /* uit partials */
 /* de container voor alle gifts op de index pagina en op de details pagina */
 .container-gift {
