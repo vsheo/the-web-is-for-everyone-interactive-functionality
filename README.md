@@ -24,6 +24,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
           * [Liquid partials](#Liquid-partials)<br/>
               * [Cadeau](#Cadeau)<br/>
               * [Cadeau container](#Cadeau-container)<br/>
+              * [Data van details naar partials](#Data-van-details-naar-partials)<br/>
       * [JavaScript](#JavaScript)<br/>
           * [Loader](#Loader)<br/>
           * [back button](#back-button)<br/>
@@ -181,6 +182,15 @@ container index pagina:<br/>
 <img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 50%;"><br/>
 container details pagina:<br/>
 <img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;">
+
+#### Data van details naar partials
+op de index/detail pagina render ik de container voor de cadeaus.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/index.liquid#L26
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/details.liquid#L66
+in de container gebruik ik een for loop om alle data in cadeaus om te zetten
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/container-gift.liquid#L3-L6
+in de partial met de cadeau gebruik ik de data die vanuit de index/details pagina kwam
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/article-gift.liquid#L2-L11
 
 
 ### JavaScript
