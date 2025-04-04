@@ -159,7 +159,7 @@ https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/
 ### Liquid partials
 De herhalende stukken HTML code op de website zijn in een aparte Liquid file geplaatst.
 Hierdoor kunnen ze met Liquid op de juiste plek worden ingeladen.
-Als er een aanpassing in de HTML nodig is, hoeft dit maar op één plek te gebeuren.
+Ik heb dit gedaan zodat ik dezelfde code op meerdere plekken kan gebruiken. Als er een aanpassing in de HTML nodig is, hoeft dat maar op één plek te gebeuren.
 
 
 #### Cadeau
