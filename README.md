@@ -24,7 +24,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
           * [Liquid partials](#Liquid-partials)<br/>
               * [Cadeau](#Cadeau)<br/>
               * [Cadeau container](#Cadeau-container)<br/>
-              * [Data van server.js naar partials](#Data-van-server.js-naar-partials)<br/>
+              * [Data van server.js naar partials](#Data-van-serverJS-naar-partials)<br/>
       * [JavaScript](#JavaScript)<br/>
           * [Loader](#Loader)<br/>
           * [back button](#back-button)<br/>
@@ -183,7 +183,7 @@ container index pagina:<br/>
 container details pagina:<br/>
 <img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;">
 
-#### Data van server.js naar partials
+#### Data van serverJS naar partials
 In de index route geef ik de gegevens van alle cadeaus en de gegevens van alle bookmarks mee.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/25bfc6c2ecaa3f4e875409f730fac65332be52dd/server.js#L44
 Op de index pagina render ik de container voor alle cadeaus, waarbij ik zowel de gegevens van alle cadeaus als de bookmarks meegeef, omdat ik deze nodig heb om de cadeau kaartjes te genereren.
