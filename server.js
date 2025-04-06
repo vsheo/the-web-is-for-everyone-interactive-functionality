@@ -105,8 +105,7 @@ app.get('/details/:slug', async function (request, response) {
 
   const allGifts = await fetch("https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,description,url")
   const allGiftsResponseJSON = await allGifts.json()
-  console.log(allGiftsResponseJSON.data)
-
+  
   // alle bookmarked items
   const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
   const bookmarkedJSON = await bookmarked.json()
