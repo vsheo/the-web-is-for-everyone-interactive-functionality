@@ -297,7 +297,13 @@ Je kunt deze localhost website op je telefoon testen met het volgende:
 #### success state
 Wanneer er op het bookmark icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Als feedforward gebruik ik een bookmark icoon met een plus erin. Wanneer hierop wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Nadat het cadeau in de bookmarklijst staat, verandert het bookmark icoon naar een zwarte versie, dit is feedback aan de gebruiker. Dit heb ik gedaan zodat de gebruiker op de indexpagina kan zien welke cadeaus al in zijn bookmarklijst staan.<br/>
 
+index pagina
+
 https://github.com/user-attachments/assets/e166483b-825c-41f3-8434-9163c710869c
+
+details pagina
+
+https://github.com/user-attachments/assets/6fe291c6-4f57-4af0-8183-18b4b1bfc824
 
 
 #### empty state
