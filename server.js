@@ -105,8 +105,16 @@ app.get('/details/:slug', async function (request, response) {
 
   const allGifts = await fetch("https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,description,url")
   const allGiftsResponseJSON = await allGifts.json()
+  console.log(allGiftsResponseJSON.data)
 
-  response.render('details.liquid', {clickedGiftData: clickedgiftResponseJSON.data[0], allGifts: allGiftsResponseJSON.data})
+  // alle bookmarked items
+  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
+  const bookmarkedJSON = await bookmarked.json()
+  let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
+    return bookmark.milledoni_products_id
+  })
+
+  response.render('details.liquid', {clickedGiftData: clickedgiftResponseJSON.data[0], allGifts: allGiftsResponseJSON.data, bookmarks: bookmarks})
 })
 
 

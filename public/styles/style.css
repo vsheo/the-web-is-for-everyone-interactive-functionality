@@ -354,6 +354,10 @@ header {
                     fill: var(--text-highlight);
                     margin: 0 0.5em;
                 }
+
+                &:active {
+                    scale: 0.7;
+                }
             }
         }
     }
