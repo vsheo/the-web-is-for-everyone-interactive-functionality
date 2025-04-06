@@ -295,7 +295,7 @@ Je kunt deze localhost website op je telefoon testen met het volgende:
 
 ### UI states
 #### success state
-Wanneer er op het bookmark icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Als feedforward gebruik ik een bookmark icoon met een plus erin. Wanneer hierop wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Nadat het cadeau in de bookmarklijst staat, verandert het bookmark icoon naar een zwarte versie, dit is feedback aan de gebruiker. Dit heb ik gedaan zodat de gebruiker op de indexpagina kan zien welke cadeaus al in zijn bookmarklijst staan.<br/>
+Wanneer er op het bookmark icoon wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Als feedforward gebruik ik een bookmark icoon met een plus erin. Wanneer hierop wordt geklikt, wordt het cadeau toegevoegd aan de bookmarklijst. Nadat het cadeau in de bookmarklijst staat, verandert het bookmark icoon naar een zwarte versie, dit is feedback aan de gebruiker. Dit heb ik gedaan zodat de gebruiker op de index en details pagina kan zien welke cadeaus al in zijn bookmarklijst staan.<br/>
 
 index pagina
 
@@ -308,12 +308,13 @@ https://github.com/user-attachments/assets/6fe291c6-4f57-4af0-8183-18b4b1bfc824
 
 #### empty state
 Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.<br/>
+Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, en in geval ze niet weten hoe ze cadeaus kunnen toevoegen, heb ik een voorbeeld video gemaakt.<br/>
 <img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
 
 
 #### loading state
-Voor linkjes tussen pagina's komt er een loader in beeld, zodat de gebruiker weet dat er iets gebeurt.<br/>
-
+Voor linkjes tussen pagina's komt er een loader in beeld.<br/>
+Dit heb ik gedaan omdat de volgende pagina soms wat tijd nodig heeft om in te laden. Om de gebruiker te laten weten dat er iets gebeurt, verschijnt er een loader op het scherm.<br/>
 https://github.com/user-attachments/assets/5c59a533-e9a8-4155-8b20-5cfcf41b487b
 
 
