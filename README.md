@@ -172,7 +172,7 @@ Cadeau bookmarks pagina:<br/>
 <img src="/bewijslast/dry-article-3.png" alt="dry-article-3" style="width: 50%;">
 
 #### Cadeau container
-De container onderaan de detail pagina is hetzelfde als op de index pagina, met een paar kleine verschillen.
+De container onderaan de details pagina is hetzelfde als op de index pagina, met een paar kleine verschillen.
 De code voor de container is in CSS op een centrale plek geplaatst, zodat deze op beide pagina's werkt. Voor kleine aanpassingen per pagina, zoals margins, zijn deze genest, zodat ze elkaar niet beïnvloeden.
 Dit is de CSS voor de container:
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/public/styles/style.css#L593-L655
