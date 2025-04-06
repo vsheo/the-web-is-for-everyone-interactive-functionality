@@ -315,6 +315,7 @@ Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, e
 #### loading state
 Voor linkjes tussen pagina's komt er een loader in beeld.<br/>
 Dit heb ik gedaan omdat de volgende pagina soms wat tijd nodig heeft om in te laden. Om de gebruiker te laten weten dat er iets gebeurt, verschijnt er een loader op het scherm.<br/>
+
 https://github.com/user-attachments/assets/5c59a533-e9a8-4155-8b20-5cfcf41b487b
 
 
