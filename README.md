@@ -24,7 +24,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
           * [Liquid partials](#Liquid-partials)<br/>
               * [Cadeau](#Cadeau)<br/>
               * [Cadeau container](#Cadeau-container)<br/>
-              * [Data van details naar partials](#Data-van-details-naar-partials)<br/>
+              * [Data van server.js naar partials](#Data-van-server.js-naar-partials)<br/>
       * [JavaScript](#JavaScript)<br/>
           * [Loader](#Loader)<br/>
           * [back button](#back-button)<br/>
