@@ -183,13 +183,14 @@ container index pagina:<br/>
 container details pagina:<br/>
 <img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;">
 
-#### Data van details naar partials
-op de index/detail pagina render ik de container voor de cadeaus.
+#### Data van server.js naar partials
+In de index route geef ik de gegevens van alle cadeaus en de gegevens van alle bookmarks mee.
+https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/25bfc6c2ecaa3f4e875409f730fac65332be52dd/server.js#L44
+Op de index pagina render ik de container voor alle cadeaus, waarbij ik zowel de gegevens van alle cadeaus als de bookmarks meegeef, omdat ik deze nodig heb om de cadeau kaartjes te genereren.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/index.liquid#L26
-https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/details.liquid#L66
-in de container gebruik ik een for loop om alle data in cadeaus om te zetten
+In de container gebruik ik een for loop om alle cadeaus op de pagina weer te geven. De for loop geeft de gegevens per cadeau door, samen met alle bookmarks data.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/container-gift.liquid#L3-L6
-in de partial met de cadeau gebruik ik de data die vanuit de index/details pagina kwam
+In de partial van het cadeau gebruik ik de data voor de afbeelding, de naam van het cadeau, de slug voor de link naar de details pagina en de bookmarkgegevens om te bepalen of het cadeau een leeg of gekleurd bookmark icoon nodig heeft.
 https://github.com/vsheo/the-web-is-for-everyone-interactive-functionality/blob/6194b9008a6d94ef3d597c84fd3230f33fcee42a/views/partials/article-gift.liquid#L2-L11
 
 
